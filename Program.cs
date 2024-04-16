@@ -12,15 +12,15 @@ namespace Topic_7___Assignment
         {
             // Naqi Master
             Random generator = new Random();
-            List <int> integers = new List<int>();
+            List <int> numbers = new List<int>();
 
 
             Console.WriteLine("Here is the list of numbers:");
 
             for (int i = 0; i < 25; i++)
             {
-                integers.Add(generator.Next(10,21));
-                Console.Write(integers[i]+", ");
+                numbers.Add(generator.Next(10,21));
+                Console.Write(numbers[i]+", ");
             }
 
             int user = 0; ;
@@ -41,27 +41,27 @@ namespace Topic_7___Assignment
 
                 if (user == 1)
                 {
-                    integers.Sort();
+                    numbers.Sort();
                 }
                 else if (user == 2)
                 {
-                    List<int> integersNew = new List<int>();
+                    List<int> numbersNew = new List<int>();
 
                     for (int j = 0; j < 25; j++)
                     {
-                        integers.Add(generator.Next(10, 21));
-                        Console.Write(integers[j] + ", ");
+                        numbers.Add(generator.Next(10, 21));
+                        Console.Write(numbers[j] + ", ");
                     }
                 }
                 else if (user == 3)
                 {
                     Console.WriteLine("Enter a number to remove:");
-                    integers.Remove(Convert.ToInt32(Console.ReadLine()));
+                    numbers.Remove(Convert.ToInt32(Console.ReadLine()));
                 }
                 else if (user == 4)
                 {
                     Console.WriteLine("What value would you like to add?");
-                    integers.Add(Convert.ToInt32(Console.ReadLine()));
+                    numbers.Add(Convert.ToInt32(Console.ReadLine()));
                 }
                 else if (user == 5)
                 {
@@ -72,7 +72,7 @@ namespace Topic_7___Assignment
 
                     for (int j = 0; j < 25; j++)
                     {
-                        if (integers[j] == input)
+                        if (numbers[j] == input)
                         {
                             counter = counter + 1;
                         }
@@ -83,13 +83,13 @@ namespace Topic_7___Assignment
                 }
                 else if (user == 6)
                 {
-                    integers.Sort();
-                    Console.WriteLine($"The largest value in the list is {integers.Count - 1}.");
+                    numbers.Sort();
+                    Console.WriteLine($"The largest value in the list is {numbers.Count - 1}.");
                 }
                 else if (user == 7)
                 {
-                    integers.Sort();
-                    Console.WriteLine($"The smallest value in the list is {integers[0]}");
+                    numbers.Sort();
+                    Console.WriteLine($"The smallest value in the list is {numbers[0]}");
                 }
             }
         }
