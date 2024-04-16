@@ -10,7 +10,7 @@ namespace Topic_7___Assignment
     {
         static void Main(string[] args)
         {
-            // Naqi Master
+            // Naqi
             Random generator = new Random();
             List <int> numbers = new List<int>();
 
