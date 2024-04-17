@@ -14,18 +14,26 @@ namespace Topic_7___Assignment
             Random generator = new Random();
             List <int> numbers = new List<int>();
 
-
             Console.WriteLine("Here is the list of numbers:");
+            Console.WriteLine();
 
             for (int i = 0; i < 25; i++)
             {
-                numbers.Add(generator.Next(10,21));
-                Console.Write(numbers[i]+", ");
+                numbers.Add(generator.Next(10, 21));
             }
 
             int user = 0; ;
-            while (user != 8)
+            while (user != 9)
             {
+                Console.Clear();
+
+               for (int i = 0; i < numbers.Count; i++)
+                {
+                    Console.Write(numbers[i] + ", ");
+
+                }
+
+                Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine("Select one of the options:");
                 Console.WriteLine("1. Sort List");
@@ -35,7 +43,8 @@ namespace Topic_7___Assignment
                 Console.WriteLine("5. Count # of Occurence of Value");
                 Console.WriteLine("6. Print Largest Value");
                 Console.WriteLine("7. Print Smallest Value");
-                Console.WriteLine("8. Quit");
+                Console.WriteLine("8. Print middle number of list");
+                Console.WriteLine("9. Quit");
 
                 user = Convert.ToInt32(Console.ReadLine());
 
@@ -45,13 +54,23 @@ namespace Topic_7___Assignment
                 }
                 else if (user == 2)
                 {
+                    //Not sure if you want a new list or replace the list with new numbers
+                    //To replace same list with new numbers, use the following code 
+                    /* numbers.Clear();
+                     * for (int j = 0; j < 25; j++)
+                    {
+                        numbers.Add(generator.Next(10, 21));
+                        Console.Write(numbers[j] + ", ");
+                    }*/
                     List<int> numbersNew = new List<int>();
 
                     for (int j = 0; j < 25; j++)
                     {
-                        numbers.Add(generator.Next(10, 21));
-                        Console.Write(numbers[j] + ", ");
+                        numbersNew.Add(generator.Next(10, 21));
+                        Console.Write(numbersNew[j] + ", ");
                     }
+
+                    Console.ReadLine();
                 }
                 else if (user == 3)
                 {
@@ -62,6 +81,7 @@ namespace Topic_7___Assignment
                 {
                     Console.WriteLine("What value would you like to add?");
                     numbers.Add(Convert.ToInt32(Console.ReadLine()));
+
                 }
                 else if (user == 5)
                 {
@@ -79,19 +99,34 @@ namespace Topic_7___Assignment
                     }
 
                     Console.WriteLine($"There are {counter} places with the number {input}");
-                    
+
+                    Console.ReadLine();
+
+
                 }
                 else if (user == 6)
                 {
                     numbers.Sort();
-                    Console.WriteLine($"The largest value in the list is {numbers.Count - 1}.");
+                    Console.WriteLine($"The largest value in the list is {numbers[numbers.Count - 1]}.");
+                    Console.ReadLine();
+
                 }
                 else if (user == 7)
                 {
                     numbers.Sort();
                     Console.WriteLine($"The smallest value in the list is {numbers[0]}");
+                    Console.ReadLine();
+
+                }
+                else if (user == 8)
+                {
+                    numbers.Sort();
+                    Console.WriteLine($"The middle value of the list is {numbers[numbers.Count / 2]}");
+                    Console.ReadLine();
+
                 }
             }
+            Console.WriteLine("Thanks for using this application!");
         }
     }
 }
